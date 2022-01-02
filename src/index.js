@@ -5,3 +5,4 @@ import { pattern1 } from './data.js'
 import Matrix from './Matrix.js'
 
 ReactDOM.render(<Matrix values={pattern1} />, document.getElementById('root'));
+//pass in a "values" prop to matrix which is based on the pattern1 object in data.js

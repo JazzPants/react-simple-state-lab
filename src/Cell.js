@@ -4,10 +4,10 @@ class Cell extends React.Component {
     constructor(props) {
         super();
         this.state = {
-            color: props.values
+            color: props.value
         }
     }
-
+//props.value, not props.values!
     handleClick = () => {
         this.setState({
             color: '#333'
@@ -20,5 +20,5 @@ class Cell extends React.Component {
         onClick={this.handleClick}></div>)
     }
 }
-
+//this.setState isnt called directly, but is invoked through handleClick, which then updates the color of state with a setState method
 export default Cell

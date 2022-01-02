@@ -4,13 +4,18 @@ import Cell from './Cell'
 export default class Matrix extends Component {
   
   genRow = (vals) => {
-    return vals.map((val, i) => <Cell key={i} value={val} className="cell"></Cell>) // replace me and render a cell component instead!
+    console.log(vals)
+    return vals.map((val, i) => <Cell  key={i} value={val} className="cell"></Cell>) // replace me and render a cell component instead!
   }
+  // key={i} value={val} className="cell" can be omitted..why?
   
   genMatrix = () => {
-    return this.props.values.map((rowVals,i) => <div className="row" key={i}>{this.genRow(rowVals)}</div>)
+    console.log(this.props.values)
+    return this.props.values.map((rowVals, i) => <div className="row" key={i}>{this.genRow(rowVals)}</div>)
   }
-  
+  //takes in "values" attribute from index.js, and maps over elements in "pattern1" - rowVals can be any name you give it!
+// i is just the index number of each element
+
   render() {
     return (
       <div id="matrix">
