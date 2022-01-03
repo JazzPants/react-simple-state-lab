@@ -3,6 +3,7 @@ import Cell from './Cell'
 
 export default class Matrix extends Component {
   
+    //render each element in the row of colours, return and render a Cell component based on that!
   genRow = (vals) => {
     console.log(vals)
     return vals.map((val, i) => <Cell  value={val} key={i}  className="cell"></Cell>) // replace me and render a cell component instead!
@@ -10,12 +11,16 @@ export default class Matrix extends Component {
   //value property, in genRow we want "val" the single cell element color, not this.props.values array
   // key={i} value={val} className="cell" can be omitted..why?
   
+  //return the rows and render them 
   genMatrix = () => {
     console.log(this.props.values)
     return this.props.values.map((rowVals, i) => <div className="row" key={i}>{this.genRow(rowVals)}</div>)
   }
 //in genMatrix, loop through all the arrays of the given matrix. THEN inside each array, loop through each element with genRow
-  //takes in "values" attribute from index.js, and maps over elements in "pattern1" - rowVals can be any name you give it!
+ 
+//MAPCEPTION
+
+//takes in "values" attribute from index.js, and maps over elements in "pattern1" - rowVals can be any name you give it!
 //rowVal is each "row" in the matrix array, which is an array itself of elements (An array which contains 10 arrays, that contain 10 elements)
 
 //arrays in react require an identifier so:
@@ -33,6 +38,7 @@ export default class Matrix extends Component {
   
 }
 
+//2D ARRAY (array of arrays)
 Matrix.defaultProps = {
   values:[['#F00','#F00','#F00','#F00','#F00','#F00','#F00','#F00','#F00','#F00'],
     ['#F00','#F00','#F00','#F00','#F00','#F00','#F00','#F00','#F00','#F00'],
