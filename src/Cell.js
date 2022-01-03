@@ -8,6 +8,7 @@ class Cell extends React.Component {
         }
     }
 //props.value, not props.values!
+//Matrix passes to Cell an attribute called "value", we call it here with props.value
     handleClick = () => {
         this.setState({
             color: '#333'
@@ -21,4 +22,5 @@ class Cell extends React.Component {
     }
 }
 //this.setState isnt called directly, but is invoked through handleClick, which then updates the color of state with a setState method
+//asynchronous!
 export default Cell
